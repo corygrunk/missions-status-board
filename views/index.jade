@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+	//- include nav
+	header
+		h1 Missions Status Board
+
+	#status-board
+		.card
+			.title Total Subscribers
+			.big-number !{subCount}
+
+		.card
+			.title Total Trials
+			.big-number !{trialCount}
+	

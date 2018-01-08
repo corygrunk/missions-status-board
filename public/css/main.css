@@ -1,0 +1,96 @@
+html body {
+  /* VARIABLES */
+  --white: rgba(255, 255, 255, 1);
+  --white-trans: rgba(255, 255, 255, .5);
+  --black: rgba(0, 0, 0, 1);
+  --black-trans: rgba(0, 0, 0, .5);
+  --gray-lighter: rgba(243, 243, 243, 1);
+  --gray-lighter-trans: rgba(243, 243, 243, .5);
+  --gray-light: rgba(214, 214, 214, 1);
+  --gray-light-trans: rgba(214, 214, 214, .5);
+  --gray: rgba(150, 150, 150, 1);
+  --gray-trans: rgba(150, 150, 150, .5);
+  --gray-dark: rgba(74, 74, 74, 1);
+  --gray-dark-trans: rgba(74, 74, 74, .5);
+  --gray-darker: rgba(46, 46, 46, 1);
+  --gray-darker-trans: rgba(46, 46, 46, .5);
+  --gray-darkest: rgba(24, 24, 24, 1);
+  --blue-lighter: rgba(239, 249, 252, 1);
+  --blue-light: rgba(145, 195, 214, 1);
+  --blue: rgba(2, 153, 207, 1);
+  --blue-trans: rgba(0, 142, 200, .5);
+  --blue-dark: rgba(24, 107, 140, 1);
+  --blue-dark-trans: rgba(24, 107, 140, .5);
+  --blue-darker: rgba(38, 70, 83, 1);
+  --blue-darker-trans: rgba(38, 70, 83, .5);
+  --blue-darkest: #0D2A35;
+  --green: rgba(42, 157, 143, 1);
+  --green-trans: rgba(42, 157, 143, .5);
+  --green-light: rgba(225, 242, 240, 1);
+  --green-light-trans: rgba(225, 242, 240, .5);
+  --green-bright: #09B22A;
+  --yellow: rgba(233, 196, 106, 1);
+  --yellow-light: rgba(251, 234, 192, 1);
+  --yellow-light-trans: rgba(251, 234, 192, .75);
+  --yellow-trans: rgba(233, 196, 106, .5);
+  --orange: rgba(244, 162, 97, 1);
+  --orange-trans: rgba(244, 162, 97, .5);
+  --red: rgba(231, 111, 81, 1);
+  --red-dark: rgba(117, 35, 42, 1);
+  --red-light: rgba(255, 230, 225, 1);
+  --red-trans: rgba(231, 111, 81, .5);
+
+  /* Globals */
+  margin: 0;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: var(--gray-light);
+  background-color: var(--gray-darker);
+}
+
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-light);
+}
+
+h1 span {
+  font-weight: 200;
+}
+
+h1 a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+p {
+  margin: 10px 0 30px 0;
+  line-height: 150%;
+  font-weight: 200;
+  font-size: 18px;
+  color: var(--blue-darker);
+}
+
+header {
+  padding: 20px;
+  background-color: var(--gray-darkest);
+}
+
+#status-board .card {
+  padding: 20px;
+  margin: 20px;
+  width: 33%;
+  background-color: var(--gray-dark);
+}
+
+#status-board .card .title {
+  font-size: 18px;
+}
+
+#status-board .card .big-number {
+  font-size: 70px;
+  font-weight: 700;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "missions-status-board",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "Passive status board for office displays.",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "4.16.x",
+    "intercom-client": "^2.9.1",
+    "jade": "1.11.x",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
