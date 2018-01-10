@@ -7,11 +7,20 @@ block content
 		h1 Missions Status Board
 
 	#status-board
-		.card
-			.title Total Subscribers
-			.big-number !{subCount}
+		.column-01
+			.card
+				.title Total Subscribers
+				.big-number !{subCount}
 
-		.card
-			.title Total Trials
-			.big-number !{trialCount}
+			.card
+				.title Total Trials
+				.big-number !{trialCount}
+
+		.column-02
+			.list
+				for trelloCard in trelloCards
+					.card
+						.title #{trelloCard.name}
+						.owner #{trelloCard.fullName}
+						img.avatar(src="#{trelloCard.avatar}")
 	

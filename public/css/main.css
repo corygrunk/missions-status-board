@@ -47,6 +47,7 @@ html body {
   text-align: center;
   color: var(--gray-light);
   background-color: var(--gray-darker);
+  box-sizing: border-box;
 }
 
 
@@ -71,7 +72,6 @@ p {
   line-height: 150%;
   font-weight: 200;
   font-size: 18px;
-  color: var(--blue-darker);
 }
 
 header {
@@ -79,10 +79,19 @@ header {
   background-color: var(--gray-darkest);
 }
 
+.column-01 {
+  float: left;
+  width: 50%;
+}
+
+.column-02 {
+  float: right;
+  width: 50%;
+}
+
 #status-board .card {
+  display: inline-block;
   padding: 20px;
-  margin: 20px;
-  width: 33%;
   background-color: var(--gray-dark);
 }
 
