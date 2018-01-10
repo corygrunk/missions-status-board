@@ -9,6 +9,7 @@ const express = require('express')
 const dotenv = require('dotenv').config()
 const request = require('request')
 const bodyParser = require('body-parser')
+const moment = require('moment')
 const Intercom = require('intercom-client')
 const client = new Intercom.Client({ token: process.env.INTERCOM_PERSONAL_ACCESS_TOKEN })
 const Trello = require('node-trello')
@@ -23,6 +24,7 @@ app.use(bodyParser())
 
 const router = express.Router()
 
+var refreshDate = 'Data refreshed on ' + moment().format('MM-DD-YYYY HH:mm')
 var subscriberCount = 0
 var trialingCount = 0
 
@@ -73,7 +75,7 @@ let getCardDetails = function (data, callback) {
 	}	
 }
 
-let refreshBoard = function () {
+let refreshData = function (callback) {
 	// Trello cards in Doing column
 	getTrelloCards(function (data) {
 		// console.log(trelloCardObj)
@@ -93,10 +95,27 @@ let refreshBoard = function () {
 		trialingCount = countJson['Trialing Company']
 		// console.log(trialingCount)
 	})
+	refreshDate = 'Data refreshed on ' + moment().format('MM-DD-YYYY HH:mm')
+	callback(refreshDate)
+}
+
+let refreshBoard = function () {
+	refreshData(function (data) {
+		console.log(data)
+		router.get('/', function(req, res) {
+			res.render('index', {
+				title: 'Missions Status Board',
+				refreshed: refreshDate,
+				subCount: subscriberCount, 
+				trialCount: trialingCount,
+				trelloCards: trelloCardObj
+			})
+		})		
+	})
 }
 
 refreshBoard() // initial data
-let refreshTimer = setInterval(refreshBoard, 50000)
+let refreshTimer = setInterval(refreshBoard, 300000)
 
 
 // ROUTES
@@ -104,6 +123,7 @@ let refreshTimer = setInterval(refreshBoard, 50000)
 router.get('/', function(req, res) {
   res.render('index', {
 		title : 'Missions Status Board',
+		refreshed: refreshDate,
 		subCount: subscriberCount, 
 		trialCount: trialingCount,
 		trelloCards: trelloCardObj

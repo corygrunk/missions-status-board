@@ -5,22 +5,26 @@ block content
 	//- include nav
 	header
 		h1 Missions Status Board
+		p 
+			small #{refreshed}
 
 	#status-board
-		.column-01
+		.big-stats
 			.card
 				.title Total Subscribers
-				.big-number !{subCount}
+				.big-number #{subCount}
 
 			.card
 				.title Total Trials
-				.big-number !{trialCount}
+				.big-number #{trialCount}
 
-		.column-02
+		.trello-column
+			h2 Trello 
+				span Doing
 			.list
 				for trelloCard in trelloCards
 					.card
 						.title #{trelloCard.name}
-						.owner #{trelloCard.fullName}
+						//- .owner #{trelloCard.fullName}
 						img.avatar(src="#{trelloCard.avatar}")
 	
