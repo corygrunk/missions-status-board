@@ -15,6 +15,8 @@ const client = new Intercom.Client({ token: process.env.INTERCOM_PERSONAL_ACCESS
 const Trello = require('node-trello')
 
 const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
 const port = process.env.PORT || 5000
 
 app.set('views', __dirname + '/views')
@@ -24,9 +26,17 @@ app.use(bodyParser())
 
 const router = express.Router()
 
-var refreshDate = 'Data refreshed on ' + moment().format('MM-DD-YYYY HH:mm')
+var refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 var subscriberCount = 0
 var trialingCount = 0
+var trelloCardObj = []
+
+let boardData = {
+	'refreshed' : refreshDate,
+	'subCount' : subscriberCount,
+	'trialCount' : trialingCount,
+	'trelloCards' : trelloCardObj
+}
 
 // MIDDLEWARE
 // ==============================================
@@ -44,7 +54,6 @@ router.use(function(req, res, next) {
 let trello = new Trello(process.env.TRELLO_DEVELOPER_KEY, process.env.TRELLO_USER_TOKEN)
 let trelloBoardId = process.env.TRELLO_BOARD_ID
 let trelloIndexForList = 2
-let trelloCardObj = []
 
 let getTrelloCards = function (callback) {
 	trello.get('/1/boards/' + trelloBoardId + '/lists?cards=open&card_fields=name&fields=name', function(err, data) {
@@ -86,6 +95,7 @@ let refreshData = function (callback) {
 	client.counts.companySegmentCounts(function (res) {
 		let countJson = res.body.company.segment[3]
 		subscriberCount = countJson['Subscribed Companies']
+		boardData.subCount = subscriberCount
 		// console.log(subscriberCount)
 	})
 
@@ -93,29 +103,21 @@ let refreshData = function (callback) {
 	client.counts.companySegmentCounts(function (res) {
 		let countJson = res.body.company.segment[4]
 		trialingCount = countJson['Trialing Company']
+		boardData.trialCount = trialingCount
 		// console.log(trialingCount)
 	})
-	refreshDate = 'Data refreshed on ' + moment().format('MM-DD-YYYY HH:mm')
-	callback(refreshDate)
+	refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
+	boardData.refreshed = refreshDate
+	callback(boardData)
 }
 
 let refreshBoard = function () {
 	refreshData(function (data) {
-		console.log(data)
-		router.get('/', function(req, res) {
-			res.render('index', {
-				title: 'Missions Status Board',
-				refreshed: refreshDate,
-				subCount: subscriberCount, 
-				trialCount: trialingCount,
-				trelloCards: trelloCardObj
-			})
-		})		
+		console.log(data.refreshed)
 	})
 }
 
 refreshBoard() // initial data
-let refreshTimer = setInterval(refreshBoard, 300000)
 
 
 // ROUTES
@@ -136,6 +138,19 @@ app.use('/', router)
 // START THE SERVER
 // ==============================================
 
-app.listen(port, function() {
+server.listen(port, function() {
   console.log("Listening on " + port)
+})
+
+io.on('connection', function(client) {
+	console.log('Client connected...')
+	client.emit('message', boardData)
+	
+	client.on('join', function(data) {
+		let testFunc = function () {
+			refreshBoard()
+			client.emit('message', boardData)
+		}
+		let refreshTimer = setInterval(testFunc, 300000)
+	})
 })
