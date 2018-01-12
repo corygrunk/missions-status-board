@@ -28,7 +28,7 @@ const router = express.Router()
 
 var refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 var subscriberCount = 0
-var subscriberCountTrend = 'No trend'
+var subscriberCountTrend = ''
 var trialingCount = 0
 var trelloCardObj = []
 
