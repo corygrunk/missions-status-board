@@ -36,7 +36,7 @@ block content
 		});
 
 		socket.on('message', function(data) {
-			console.log(data);
+			// console.log(data);
 			$('.refreshed').text(data.refreshed);
 			$('.total-subs .big-number').text(data.subCount);
 			$('.total-subs #sub-trend').removeClass();
@@ -48,4 +48,6 @@ block content
 			for(var i = 0; i < data.trelloCards.length; i++) {
 				$('.trello-column .list').append('<div class="card"><div class="title">' + data.trelloCards[i].name + '</div><img class="avatar" src="' + data.trelloCards[i].avatar + '" /></div>');
 			}
+			console.log($(document).height());
+			$('.big-stats .card').height($(document).height() / 2);
 		});

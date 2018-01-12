@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   text-align: center;
   color: var(--gray-light);
-  background-color: var(--gray-darker);
+  background-color: var(--gray-darkest);
   box-sizing: border-box;
 }
 
@@ -75,15 +75,10 @@ body {
 }
 
 .trello-column .card .title {
-  display: inline-block;
   padding-right: 10px;
   font-size: 22px;
   font-weight: 400;
   line-height: 150%;
-}
-
-.trello-column .card .owner {
-  font-weight: 300;
   flex-grow: 2;
 }
 
@@ -91,7 +86,7 @@ body {
   width: 40px;
   height: 100%;
   border-radius: 50%;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
 }
 
 .refreshed {
@@ -106,8 +101,20 @@ body {
 }
 
 .big-stats .card {
-  padding: 100px 20px;
   margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--blue-darkest)
+}
+
+.big-stats .card.total-subs {
+  background: var(--blue-darker)
+}
+
+.big-stats .card .title {
+  padding-top: 10%;
+  
 }
 
 #sub-trend.up .trend-arrow {
@@ -135,10 +142,14 @@ body {
 }
 
 .card {
+  background-color: var(--gray-dark);
+}
+
+.trello-column .card {
   display: block;
   padding: 20px;
   margin: 10px;
-  background-color: var(--gray-dark);
+  
 }
 
 .card .title {
