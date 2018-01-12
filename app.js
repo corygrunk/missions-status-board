@@ -117,7 +117,9 @@ let refreshData = function (callback) {
 	})
 	refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 	boardData.refreshed = refreshDate
-	console.log(boardData.refreshed + ' Subs: ' + boardData.subCount + ' Trials: ' + boardData.trialCount + ' Trend: ' + boardData.subCountTrend)
+	if (boardData.subCount !== 0) {
+		console.log(boardData.refreshed + ' Subs: ' + boardData.subCount + ' Trials: ' + boardData.trialCount + ' Trend: ' + boardData.subCountTrend)	
+	}
 	callback(boardData)
 }
 
@@ -158,7 +160,7 @@ io.on('connection', function(client) {
 	client.emit('message', boardData)
 	
 	client.on('join', function(data) {
-		console.log(boardData.trelloCards)
+		//console.log(boardData.trelloCards)
 		let testFunc = function () {
 			refreshBoard()
 			client.emit('message', boardData)
