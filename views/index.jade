@@ -2,12 +2,6 @@ extends layout
 
 block content
 
-	//- include nav
-	header
-		h1 Missions Status Board
-		p 
-			small #{refreshed}
-
 	#status-board
 		.big-stats
 			.card.total-subs
@@ -30,6 +24,7 @@ block content
 				//- 	.card
 				//- 		.title #{trelloCard.name}
 				//- 		img.avatar(src="#{trelloCard.avatar}")
+			.refreshed #{refreshed}
 
 	script(src='https://code.jquery.com/jquery-3.2.1.min.js',   integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
 	
@@ -42,7 +37,7 @@ block content
 
 		socket.on('message', function(data) {
 			//- console.log(data);
-			$('header p small').text(data.refreshed);
+			$('.refreshed').text(data.refreshed);
 			$('.total-subs .big-number').text(data.subCount);
 			$('.total-subs #sub-trend').removeClass();
 			$('.total-subs #sub-trend').addClass(data.subCountTrend);
