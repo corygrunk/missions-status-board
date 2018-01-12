@@ -44,9 +44,7 @@ block content
 			$('.total-subs #sub-trend .trend-label').text('');
 			$('.total-subs #sub-trend .trend-label').text(data.subCountTrend);
 			$('.total-trials .big-number').text(data.trialCount);
-			if ($('.list .card')) {
-				$('.list').empty();
-			}
+			$('.list').empty();
 			for(var i = 0; i < data.trelloCards.length; i++) {
 				$('.trello-column .list').append('<div class="card"><div class="title">' + data.trelloCards[i].name + '</div><img class="avatar" src="' + data.trelloCards[i].avatar + '" /></div>');
 			}

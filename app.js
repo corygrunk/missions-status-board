@@ -71,6 +71,7 @@ let getTrelloCards = function (callback) {
 
 let getCardDetails = function (data, callback) {
 	let count = 0
+	trelloCardObj = []
 	for (let i = 0; i < data.length; i++) {
 		trelloCardObj[i] = data[i]
 		// Get card owners
