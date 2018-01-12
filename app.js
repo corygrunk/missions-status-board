@@ -90,7 +90,7 @@ let getCardDetails = function (data, callback) {
 let refreshData = function (callback) {
 	// Trello cards in Doing column
 	getTrelloCards(function (data) {
-		// console.log(trelloCardObj)
+		boardData.trelloCards = trelloCardObj
 	})
 
 	// INTERCOM.IO
@@ -158,6 +158,7 @@ io.on('connection', function(client) {
 	client.emit('message', boardData)
 	
 	client.on('join', function(data) {
+		console.log(boardData.trelloCards)
 		let testFunc = function () {
 			refreshBoard()
 			client.emit('message', boardData)
