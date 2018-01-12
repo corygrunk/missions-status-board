@@ -144,6 +144,30 @@ header p small {
   margin-right: 0;
 }
 
+#sub-trend.up .trend-arrow {
+  display: inline-block; 
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid var(--green);
+}
+
+#sub-trend.down .trend-arrow {
+  display: inline-block; 
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--red);
+}
+
+#sub-trend .trend-label {
+  display: inline-block;
+  text-transform: capitalize;
+  padding-left: 5px;
+}
+
 .card {
   display: block;
   padding: 20px;

@@ -28,12 +28,14 @@ const router = express.Router()
 
 var refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 var subscriberCount = 0
+var subscriberCountTrend = 'No trend'
 var trialingCount = 0
 var trelloCardObj = []
 
 let boardData = {
 	'refreshed' : refreshDate,
 	'subCount' : subscriberCount,
+	'subCountTrend' : subscriberCountTrend,
 	'trialCount' : trialingCount,
 	'trelloCards' : trelloCardObj
 }
@@ -94,6 +96,12 @@ let refreshData = function (callback) {
 	// Subscribed Companies
 	client.counts.companySegmentCounts(function (res) {
 		let countJson = res.body.company.segment[3]
+		if (countJson['Subscribed Companies'] > subscriberCount && subscriberCount !== 0) {
+			subscriberCountTrend = 'up'
+		}
+		if (countJson['Subscribed Companies'] < subscriberCount && subscriberCount !== 0) {
+			subscriberCountTrend = 'down'
+		}
 		subscriberCount = countJson['Subscribed Companies']
 		boardData.subCount = subscriberCount
 		// console.log(subscriberCount)
@@ -108,12 +116,13 @@ let refreshData = function (callback) {
 	})
 	refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 	boardData.refreshed = refreshDate
+	console.log(boardData.refreshed + ' Subs: ' + boardData.subCount + ' Trials: ' + boardData.trialCount + ' Trend: ' + boardData.subCountTrend)
 	callback(boardData)
 }
 
 let refreshBoard = function () {
 	refreshData(function (data) {
-		console.log(data.refreshed)
+		// console.log(data.refreshed)
 	})
 }
 
@@ -126,7 +135,8 @@ router.get('/', function(req, res) {
   res.render('index', {
 		title : 'Missions Status Board',
 		refreshed: refreshDate,
-		subCount: subscriberCount, 
+		subCount: subscriberCount,
+		subCountTrend: subscriberCountTrend,
 		trialCount: trialingCount,
 		trelloCards: trelloCardObj
 	})

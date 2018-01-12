@@ -13,6 +13,9 @@ block content
 			.card.total-subs
 				.title Total Subscribers
 				.big-number #{subCount}
+				#sub-trend
+					.trend-arrow
+					.trend-label Up
 				//- #{subCount}
 
 			.card.total-trials
@@ -41,6 +44,10 @@ block content
 			//- console.log(data);
 			$('header p small').text(data.refreshed);
 			$('.total-subs .big-number').text(data.subCount);
+			$('.total-subs #sub-trend').removeClass();
+			$('.total-subs #sub-trend').addClass(data.subCountTrend);
+			$('.total-subs #sub-trend .trend-label').text('');
+			$('.total-subs #sub-trend .trend-label').text(data.subCountTrend);
 			$('.total-trials .big-number').text(data.trialCount);
 			if ($('.list .card')) {
 				$('.list').empty();
