@@ -1,4 +1,7 @@
 .tmp
+cities-from-google-analytics.json
+cities-intercom-export.json
+cities.json
 
 # Environment
 .env
