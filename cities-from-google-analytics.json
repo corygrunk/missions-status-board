@@ -1,0 +1,1014 @@
+[
+    {
+        "country": "Afghanistan",
+        "city": "Kabul"
+    },
+    {
+        "country": "Argentina",
+        "city": "Buenos Aires"
+    },
+    {
+        "country": "Argentina",
+        "city": "Rosario"
+    },
+    {
+        "country": "Argentina",
+        "city": "Villa Ballester"
+    },
+    {
+        "country": "Australia",
+        "city": "Wollongong"
+    },
+    {
+        "country": "Australia",
+        "city": "Sydney"
+    },
+    {
+        "country": "Australia",
+        "city": "Melbourne"
+    },
+    {
+        "country": "Australia",
+        "city": "Adelaide"
+    },
+    {
+        "country": "Australia",
+        "city": "Brisbane"
+    },
+    {
+        "country": "Austria",
+        "city": "Vienna"
+    },
+    {
+        "country": "Bahrain",
+        "city": "Manama"
+    },
+    {
+        "country": "Belgium",
+        "city": "Ranst"
+    },
+    {
+        "country": "Belgium",
+        "city": "Antwerp"
+    },
+    {
+        "country": "Belgium",
+        "city": "Schoten"
+    },
+    {
+        "country": "Belgium",
+        "city": "Leuven"
+    },
+    {
+        "country": "Brazil",
+        "city": "Curitiba"
+    },
+    {
+        "country": "Bulgaria",
+        "city": "Sofia"
+    },
+    {
+        "country": "Canada",
+        "city": "Calgary"
+    },
+    {
+        "country": "Canada",
+        "city": "Winnipeg"
+    },
+    {
+        "country": "Canada",
+        "city": "Toronto"
+    },
+    {
+        "country": "Canada",
+        "city": "Edmonton"
+    },
+    {
+        "country": "Canada",
+        "city": "Burnaby"
+    },
+    {
+        "country": "Canada",
+        "city": "Port Moody"
+    },
+    {
+        "country": "Canada",
+        "city": "Surrey"
+    },
+    {
+        "country": "Canada",
+        "city": "Victoria"
+    },
+    {
+        "country": "Canada",
+        "city": "West Vancouver"
+    },
+    {
+        "country": "Canada",
+        "city": "Waterloo"
+    },
+    {
+        "country": "Canada",
+        "city": "Colwood"
+    },
+    {
+        "country": "Chile",
+        "city": "Talca"
+    },
+    {
+        "country": "Chile",
+        "city": "Santiago"
+    },
+    {
+        "country": "Colombia",
+        "city": "Bogota"
+    },
+    {
+        "country": "Costa Rica",
+        "city": "(not set)"
+    },
+    {
+        "country": "Denmark",
+        "city": "Copenhagen"
+    },
+    {
+        "country": "Ecuador",
+        "city": "Quito"
+    },
+    {
+        "country": "Egypt",
+        "city": "Cairo"
+    },
+    {
+        "country": "Ethiopia",
+        "city": "Addis Ababa"
+    },
+    {
+        "country": "Finland",
+        "city": "Vantaa"
+    },
+    {
+        "country": "Finland",
+        "city": "Helsinki"
+    },
+    {
+        "country": "Finland",
+        "city": "Tampere"
+    },
+    {
+        "country": "France",
+        "city": "Paris"
+    },
+    {
+        "country": "France",
+        "city": "Nanterre"
+    },
+    {
+        "country": "France",
+        "city": "Cholet"
+    },
+    {
+        "country": "France",
+        "city": "Lyon"
+    },
+    {
+        "country": "France",
+        "city": "Dole"
+    },
+    {
+        "country": "Germany",
+        "city": "Berlin"
+    },
+    {
+        "country": "Germany",
+        "city": "Munich"
+    },
+    {
+        "country": "Germany",
+        "city": "Essen"
+    },
+    {
+        "country": "Germany",
+        "city": "(not set)"
+    },
+    {
+        "country": "Germany",
+        "city": "Schwabach"
+    },
+    {
+        "country": "Germany",
+        "city": "Frankfurt"
+    },
+    {
+        "country": "Germany",
+        "city": "Viernheim"
+    },
+    {
+        "country": "Germany",
+        "city": "Hamburg"
+    },
+    {
+        "country": "Germany",
+        "city": "Cologne"
+    },
+    {
+        "country": "Germany",
+        "city": "Munster"
+    },
+    {
+        "country": "Greece",
+        "city": "(not set)"
+    },
+    {
+        "country": "Guadeloupe",
+        "city": "(not set)"
+    },
+    {
+        "country": "Guatemala",
+        "city": "Guatemala City"
+    },
+    {
+        "country": "Hong Kong",
+        "city": "Hong Kong"
+    },
+    {
+        "country": "Hungary",
+        "city": "Pecs"
+    },
+    {
+        "country": "Hungary",
+        "city": "Budapest"
+    },
+    {
+        "country": "India",
+        "city": "Bengaluru"
+    },
+    {
+        "country": "India",
+        "city": "Chennai"
+    },
+    {
+        "country": "India",
+        "city": "(not set)"
+    },
+    {
+        "country": "India",
+        "city": "Hyderabad"
+    },
+    {
+        "country": "India",
+        "city": "Bhopal"
+    },
+    {
+        "country": "Indonesia",
+        "city": "Jakarta"
+    },
+    {
+        "country": "Ireland",
+        "city": "Dublin"
+    },
+    {
+        "country": "Israel",
+        "city": "Tel Aviv-Yafo"
+    },
+    {
+        "country": "Italy",
+        "city": "Milan"
+    },
+    {
+        "country": "Italy",
+        "city": "(not set)"
+    },
+    {
+        "country": "Japan",
+        "city": "Minato"
+    },
+    {
+        "country": "Japan",
+        "city": "Fukuoka"
+    },
+    {
+        "country": "Japan",
+        "city": "Fukaya"
+    },
+    {
+        "country": "Kenya",
+        "city": "Nairobi"
+    },
+    {
+        "country": "Kuwait",
+        "city": "(not set)"
+    },
+    {
+        "country": "Lithuania",
+        "city": "Vilnius"
+    },
+    {
+        "country": "Mexico",
+        "city": "Mexico City"
+    },
+    {
+        "country": "Mexico",
+        "city": "Puerto Vallarta"
+    },
+    {
+        "country": "Mexico",
+        "city": "Monterrey"
+    },
+    {
+        "country": "Mexico",
+        "city": "Ciudad Nezahualcoyotl"
+    },
+    {
+        "country": "Mexico",
+        "city": "Tlalnepantla de Baz"
+    },
+    {
+        "country": "Mexico",
+        "city": "Puebla"
+    },
+    {
+        "country": "Mexico",
+        "city": "Cancun"
+    },
+    {
+        "country": "Mexico",
+        "city": "San Luis Potosi"
+    },
+    {
+        "country": "Mexico",
+        "city": "Hermosillo"
+    },
+    {
+        "country": "Myanmar (Burma)",
+        "city": "Yangon"
+    },
+    {
+        "country": "Netherlands",
+        "city": "Maastricht"
+    },
+    {
+        "country": "Netherlands",
+        "city": "Landsmeer"
+    },
+    {
+        "country": "Netherlands",
+        "city": "Dordrecht"
+    },
+    {
+        "country": "Netherlands",
+        "city": "Wijhe"
+    },
+    {
+        "country": "New Zealand",
+        "city": "Wellington"
+    },
+    {
+        "country": "Norway",
+        "city": "Oslo Municipality"
+    },
+    {
+        "country": "Pakistan",
+        "city": "Lahore"
+    },
+    {
+        "country": "Palestine",
+        "city": "(not set)"
+    },
+    {
+        "country": "Peru",
+        "city": "Huancayo"
+    },
+    {
+        "country": "Philippines",
+        "city": "Cebu City"
+    },
+    {
+        "country": "Philippines",
+        "city": "Paranaque"
+    },
+    {
+        "country": "Philippines",
+        "city": "Imus"
+    },
+    {
+        "country": "Poland",
+        "city": "Krakow"
+    },
+    {
+        "country": "Poland",
+        "city": "Wroclaw"
+    },
+    {
+        "country": "Poland",
+        "city": "Warsaw"
+    },
+    {
+        "country": "Poland",
+        "city": "Gdansk"
+    },
+    {
+        "country": "Portugal",
+        "city": "Amadora"
+    },
+    {
+        "country": "Russia",
+        "city": "Moscow"
+    },
+    {
+        "country": "Saudi Arabia",
+        "city": "Riyadh"
+    },
+    {
+        "country": "Serbia",
+        "city": "Nis"
+    },
+    {
+        "country": "Singapore",
+        "city": "(not set)"
+    },
+    {
+        "country": "Singapore",
+        "city": "Singapore"
+    },
+    {
+        "country": "South Korea",
+        "city": "Seoul"
+    },
+    {
+        "country": "Spain",
+        "city": "Madrid"
+    },
+    {
+        "country": "Spain",
+        "city": "Seville"
+    },
+    {
+        "country": "Spain",
+        "city": "Barcelona"
+    },
+    {
+        "country": "Spain",
+        "city": "Getafe"
+    },
+    {
+        "country": "Spain",
+        "city": "(not set)"
+    },
+    {
+        "country": "Spain",
+        "city": "Malaga"
+    },
+    {
+        "country": "Spain",
+        "city": "A Coruna"
+    },
+    {
+        "country": "Spain",
+        "city": "Pozuelo de Alarcon"
+    },
+    {
+        "country": "Sri Lanka",
+        "city": "Colombo"
+    },
+    {
+        "country": "Sweden",
+        "city": "Boden"
+    },
+    {
+        "country": "Sweden",
+        "city": "Stockholm"
+    },
+    {
+        "country": "Sweden",
+        "city": "Malmo"
+    },
+    {
+        "country": "Switzerland",
+        "city": "Zurich"
+    },
+    {
+        "country": "Switzerland",
+        "city": "Liestal"
+    },
+    {
+        "country": "Switzerland",
+        "city": "Lausanne"
+    },
+    {
+        "country": "Taiwan",
+        "city": "(not set)"
+    },
+    {
+        "country": "Taiwan",
+        "city": "Zhudong Township"
+    },
+    {
+        "country": "Thailand",
+        "city": "Bangkok"
+    },
+    {
+        "country": "Trinidad & Tobago",
+        "city": "(not set)"
+    },
+    {
+        "country": "Turkey",
+        "city": "Mersin"
+    },
+    {
+        "country": "Ukraine",
+        "city": "Kiev"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "London"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "(not set)"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Oldham"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Daventry"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Royal Borough of Kensington and Chelsea"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Wellingborough"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Lerwick"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Cardiff"
+    },
+    {
+        "country": "United Kingdom",
+        "city": "Woodley"
+    },
+    {
+        "country": "United States",
+        "city": "Castle Rock"
+    },
+    {
+        "country": "United States",
+        "city": "New York"
+    },
+    {
+        "country": "United States",
+        "city": "Centennial"
+    },
+    {
+        "country": "United States",
+        "city": "Los Angeles"
+    },
+    {
+        "country": "United States",
+        "city": "San Francisco"
+    },
+    {
+        "country": "United States",
+        "city": "Rio Rancho"
+    },
+    {
+        "country": "United States",
+        "city": "Austin"
+    },
+    {
+        "country": "United States",
+        "city": "Westfield"
+    },
+    {
+        "country": "United States",
+        "city": "(not set)"
+    },
+    {
+        "country": "United States",
+        "city": "Phoenix"
+    },
+    {
+        "country": "United States",
+        "city": "Redwood City"
+    },
+    {
+        "country": "United States",
+        "city": "Sunnyvale"
+    },
+    {
+        "country": "United States",
+        "city": "Washington"
+    },
+    {
+        "country": "United States",
+        "city": "West Lafayette"
+    },
+    {
+        "country": "United States",
+        "city": "Liberty"
+    },
+    {
+        "country": "United States",
+        "city": "Cleveland"
+    },
+    {
+        "country": "United States",
+        "city": "Culver City"
+    },
+    {
+        "country": "United States",
+        "city": "Chicago"
+    },
+    {
+        "country": "United States",
+        "city": "Portland"
+    },
+    {
+        "country": "United States",
+        "city": "Pittsburgh"
+    },
+    {
+        "country": "United States",
+        "city": "Waterford"
+    },
+    {
+        "country": "United States",
+        "city": "Tempe"
+    },
+    {
+        "country": "United States",
+        "city": "Oceanside"
+    },
+    {
+        "country": "United States",
+        "city": "Palo Alto"
+    },
+    {
+        "country": "United States",
+        "city": "Santa Ana"
+    },
+    {
+        "country": "United States",
+        "city": "Orlando"
+    },
+    {
+        "country": "United States",
+        "city": "Northbrook"
+    },
+    {
+        "country": "United States",
+        "city": "Overland Park"
+    },
+    {
+        "country": "United States",
+        "city": "Bethesda"
+    },
+    {
+        "country": "United States",
+        "city": "Cranberry Township"
+    },
+    {
+        "country": "United States",
+        "city": "Philadelphia"
+    },
+    {
+        "country": "United States",
+        "city": "Fort Worth"
+    },
+    {
+        "country": "United States",
+        "city": "Plano"
+    },
+    {
+        "country": "United States",
+        "city": "Seattle"
+    },
+    {
+        "country": "United States",
+        "city": "Green Bay"
+    },
+    {
+        "country": "United States",
+        "city": "Fort Rucker"
+    },
+    {
+        "country": "United States",
+        "city": "Antioch"
+    },
+    {
+        "country": "United States",
+        "city": "Azusa"
+    },
+    {
+        "country": "United States",
+        "city": "Buena Park"
+    },
+    {
+        "country": "United States",
+        "city": "Corona"
+    },
+    {
+        "country": "United States",
+        "city": "Folsom"
+    },
+    {
+        "country": "United States",
+        "city": "Laguna Niguel"
+    },
+    {
+        "country": "United States",
+        "city": "Larkspur"
+    },
+    {
+        "country": "United States",
+        "city": "Morgan Hill"
+    },
+    {
+        "country": "United States",
+        "city": "Mountain View"
+    },
+    {
+        "country": "United States",
+        "city": "Oakland"
+    },
+    {
+        "country": "United States",
+        "city": "Poway"
+    },
+    {
+        "country": "United States",
+        "city": "San Clemente"
+    },
+    {
+        "country": "United States",
+        "city": "San Mateo"
+    },
+    {
+        "country": "United States",
+        "city": "Santa Barbara"
+    },
+    {
+        "country": "United States",
+        "city": "Santa Monica"
+    },
+    {
+        "country": "United States",
+        "city": "Saratoga"
+    },
+    {
+        "country": "United States",
+        "city": "Torrance"
+    },
+    {
+        "country": "United States",
+        "city": "Tustin"
+    },
+    {
+        "country": "United States",
+        "city": "Ventura"
+    },
+    {
+        "country": "United States",
+        "city": "Arvada"
+    },
+    {
+        "country": "United States",
+        "city": "Denver"
+    },
+    {
+        "country": "United States",
+        "city": "Pueblo"
+    },
+    {
+        "country": "United States",
+        "city": "Newark"
+    },
+    {
+        "country": "United States",
+        "city": "Kissimmee"
+    },
+    {
+        "country": "United States",
+        "city": "Lakeland"
+    },
+    {
+        "country": "United States",
+        "city": "Tampa"
+    },
+    {
+        "country": "United States",
+        "city": "Atlanta"
+    },
+    {
+        "country": "United States",
+        "city": "Duluth"
+    },
+    {
+        "country": "United States",
+        "city": "Marietta"
+    },
+    {
+        "country": "United States",
+        "city": "Kailua-Kona"
+    },
+    {
+        "country": "United States",
+        "city": "Marion"
+    },
+    {
+        "country": "United States",
+        "city": "DeKalb"
+    },
+    {
+        "country": "United States",
+        "city": "Evanston"
+    },
+    {
+        "country": "United States",
+        "city": "Amherst"
+    },
+    {
+        "country": "United States",
+        "city": "Boston"
+    },
+    {
+        "country": "United States",
+        "city": "Baltimore"
+    },
+    {
+        "country": "United States",
+        "city": "Montgomery Village"
+    },
+    {
+        "country": "United States",
+        "city": "Potomac"
+    },
+    {
+        "country": "United States",
+        "city": "Chesterfield"
+    },
+    {
+        "country": "United States",
+        "city": "St. Peters"
+    },
+    {
+        "country": "United States",
+        "city": "Missoula"
+    },
+    {
+        "country": "United States",
+        "city": "Charlotte"
+    },
+    {
+        "country": "United States",
+        "city": "Omaha"
+    },
+    {
+        "country": "United States",
+        "city": "Lyme"
+    },
+    {
+        "country": "United States",
+        "city": "Cherry Hill"
+    },
+    {
+        "country": "United States",
+        "city": "Clifton"
+    },
+    {
+        "country": "United States",
+        "city": "Oakland"
+    },
+    {
+        "country": "United States",
+        "city": "Brunswick"
+    },
+    {
+        "country": "United States",
+        "city": "Dayton"
+    },
+    {
+        "country": "United States",
+        "city": "Mentor"
+    },
+    {
+        "country": "United States",
+        "city": "Rocky River"
+    },
+    {
+        "country": "United States",
+        "city": "Easley"
+    },
+    {
+        "country": "United States",
+        "city": "Cleveland"
+    },
+    {
+        "country": "United States",
+        "city": "Sevierville"
+    },
+    {
+        "country": "United States",
+        "city": "Arlington"
+    },
+    {
+        "country": "United States",
+        "city": "Round Rock"
+    },
+    {
+        "country": "United States",
+        "city": "San Antonio"
+    },
+    {
+        "country": "United States",
+        "city": "Logan"
+    },
+    {
+        "country": "United States",
+        "city": "Orem"
+    },
+    {
+        "country": "United States",
+        "city": "Springville"
+    },
+    {
+        "country": "United States",
+        "city": "Ashburn"
+    },
+    {
+        "country": "United States",
+        "city": "Reston"
+    },
+    {
+        "country": "United States",
+        "city": "Smithfield"
+    },
+    {
+        "country": "United States",
+        "city": "Middlebury"
+    },
+    {
+        "country": "United States",
+        "city": "Bothell"
+    },
+    {
+        "country": "United States",
+        "city": "Redmond"
+    },
+    {
+        "country": "United States",
+        "city": "Spokane"
+    },
+    {
+        "country": "United States",
+        "city": "Appleton"
+    },
+    {
+        "country": "United States",
+        "city": "Milwaukee"
+    },
+    {
+        "country": "United States",
+        "city": "Twin Lakes"
+    },
+    {
+        "country": "United States",
+        "city": "Morgantown"
+    },
+    {
+        "country": "United States",
+        "city": "Carney"
+    },
+    {
+        "country": "United States",
+        "city": "Golden Valley"
+    },
+    {
+        "country": "United States",
+        "city": "Grosse Pointe Park"
+    },
+    {
+        "country": "United States",
+        "city": "Lake Carmel"
+    },
+    {
+        "country": "United States",
+        "city": "Miami Gardens"
+    },
+    {
+        "country": "United States",
+        "city": "Mount Lebanon"
+    },
+    {
+        "country": "United States",
+        "city": "Waldoboro"
+    }
+]

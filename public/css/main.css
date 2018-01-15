@@ -52,7 +52,7 @@ body {
 
 .trello-column {
   float: right;
-  width: 30%;
+  width: 33%;
 }
 
 .trello-column h2 {
@@ -97,7 +97,7 @@ body {
 
 .big-stats {
   float: left;
-  width: 70%;
+  width: 30%;
 }
 
 .big-stats .card {
@@ -160,6 +160,26 @@ body {
 .card .big-number {
   font-size: 140px;
   font-weight: 700;
+}
+
+.map-column {
+  float: left;
+  width: 70%;
+  background: var(--gray)
+}
+
+.map-column #mapdiv {
+  margin-right:200px;
+  width: 100%;
+  height: 500px;
+  background-color:var(--gray-dark);
+}
+
+footer.refreshed {
+  clear: both;
+  background: var(--gray-dark);
+  padding: 20px;
+  color: var(--gray);
 }
 
 @media (max-width: 1000px) {

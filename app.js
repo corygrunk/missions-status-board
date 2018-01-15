@@ -89,9 +89,9 @@ let getCardDetails = function (data, callback) {
 
 let refreshData = function (callback) {
 	// Trello cards in Doing column
-	getTrelloCards(function (data) {
-		boardData.trelloCards = trelloCardObj
-	})
+	// getTrelloCards(function (data) {
+	// 	boardData.trelloCards = trelloCardObj
+	// })
 
 	// INTERCOM.IO
 	// Subscribed Companies
@@ -139,9 +139,9 @@ router.get('/', function(req, res) {
 		title : 'Missions Status Board',
 		refreshed: refreshDate,
 		subCount: subscriberCount,
-		subCountTrend: subscriberCountTrend,
-		trialCount: trialingCount,
-		trelloCards: trelloCardObj
+		subCountTrend: subscriberCountTrend
+		// trialCount: trialingCount,
+		// trelloCards: trelloCardObj
 	})
 })
 
