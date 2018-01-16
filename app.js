@@ -26,6 +26,7 @@ app.use(bodyParser())
 
 const router = express.Router()
 
+var mapCoords = require('./map.js')
 var refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 var subscriberCount = 0
 var subscriberCountTrend = ''
@@ -158,6 +159,7 @@ server.listen(port, function() {
 io.on('connection', function(client) {
 	console.log('Client connected...')
 	client.emit('message', boardData)
+	client.emit('map', mapCoords)
 	
 	client.on('join', function(data) {
 		//console.log(boardData.trelloCards)
