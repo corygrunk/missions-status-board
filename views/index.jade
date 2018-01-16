@@ -2,30 +2,37 @@ extends layout
 
 block content
 
+	#colorbar
+		.green
+		.red
+		.orange
+		.yellow
+
 	#status-board
-		.big-stats
+		.stats
 			.card.total-subs
-				.title Total Subscribers
+				.title Subscribers
 				.big-number #{subCount}
 				#sub-trend
 					.trend-arrow
 					.trend-label Up
-
+			
 			.card.total-trials
-				.title Total Trials
+				.title Trials
 				.big-number #{trialCount}
+				
+			img(src='/img/missions-icon-circle-white.png')
 
-		.map-column
+		.map
 			#mapdiv
 
 	footer.refreshed #{refreshed}
 
 	script(src='https://code.jquery.com/jquery-3.2.1.min.js',   integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
-	
 	script(src='/ammap/ammap.js', type='text/javascript')
 	script(src='/ammap/maps/js/worldLow.js', type='text/javascript')
-
 	script(src='/socket.io/socket.io.js')
+
 	script.
 		var socket = io();
 		socket.on('connect', function(data) {
@@ -33,15 +40,14 @@ block content
 		});
 
 		socket.on('message', function(data) {
-			$('.refreshed').text(data.refreshed);
+			$('.refreshed').text('Updated: ' + data.refreshed);
 			$('.total-subs .big-number').text(data.subCount);
 			$('.total-subs #sub-trend').removeClass();
 			$('.total-subs #sub-trend').addClass(data.subCountTrend);
 			$('.total-subs #sub-trend .trend-label').text('');
+			console.log(data)
 			$('.total-subs #sub-trend .trend-label').text(data.subCountTrend);
 			$('.total-trials .big-number').text(data.trialCount);
-			$('.list').empty();
-			$('.big-stats .card').height($(document).height() / 2);
 		});
 	
 		socket.on('map', function (data) {
@@ -56,7 +62,6 @@ block content
 			};
 
 			AmCharts.makeChart( "mapdiv", {
-
 				"type": "map",
 
 				"dataProvider": {
@@ -71,7 +76,7 @@ block content
 					"outlineAlpha": 1,
 					"outlineColor": "#CC0000",
 					"selectedColor": "#CC0000",
-					"unlistedAreasAlpha": 1,
+					"unlistedAreasAlpha": .75,
 					"unlistedAreasColor": "#2e2e2e",
 					"unlistedAreasOutlineAlpha": 0,
 					"unlistedAreasOutlineColor": "#FFFFFF"
@@ -85,6 +90,5 @@ block content
 				"smallMap": {
 					"enabled": false
 				}
-
 			});
 		})

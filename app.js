@@ -12,7 +12,6 @@ const bodyParser = require('body-parser')
 const moment = require('moment')
 const Intercom = require('intercom-client')
 const client = new Intercom.Client({ token: process.env.INTERCOM_PERSONAL_ACCESS_TOKEN })
-const Trello = require('node-trello')
 
 const app = express()
 const server = require('http').createServer(app)
@@ -31,14 +30,12 @@ var refreshDate = moment().format('MM-DD-YYYY HH:mm:ss')
 var subscriberCount = 0
 var subscriberCountTrend = ''
 var trialingCount = 0
-var trelloCardObj = []
 
 let boardData = {
 	'refreshed' : refreshDate,
 	'subCount' : subscriberCount,
 	'subCountTrend' : subscriberCountTrend,
-	'trialCount' : trialingCount,
-	'trelloCards' : trelloCardObj
+	'trialCount' : trialingCount
 }
 
 // MIDDLEWARE
@@ -48,52 +45,10 @@ let boardData = {
 router.use(function(req, res, next) {
 	// Log each request to the console
 	console.log(req.method, req.url)
-
 	next()
 })
 
-
-// TRELLO
-let trello = new Trello(process.env.TRELLO_DEVELOPER_KEY, process.env.TRELLO_USER_TOKEN)
-let trelloBoardId = process.env.TRELLO_BOARD_ID
-let trelloIndexForList = 2
-
-let getTrelloCards = function (callback) {
-	trello.get('/1/boards/' + trelloBoardId + '/lists?cards=open&card_fields=name&fields=name', function(err, data) {
-		if (err) throw err
-		getCardDetails(data[trelloIndexForList].cards, callback)
-	})
-}
-
-// TODO: Currently only getting one owner per card
-// trello.get('1/cards/5a4d164fa1f743f00191a0e8/members', function(err, data) {
-// 	console.log(data)
-// })
-
-let getCardDetails = function (data, callback) {
-	let count = 0
-	trelloCardObj = []
-	for (let i = 0; i < data.length; i++) {
-		trelloCardObj[i] = data[i]
-		// Get card owners
-		trello.get('/1/cards/' + data[i].id + '/members', function(err, cards) {
-			if (err) throw err
-			count++
-			trelloCardObj[i].avatar = 'https://trello-avatars.s3.amazonaws.com/' + cards[0].avatarHash + '/50.png'
-			trelloCardObj[i].fullName = cards[0].fullName
-			if (count === data.length) {
-				callback(trelloCardObj)
-			}
-		})
-	}	
-}
-
 let refreshData = function (callback) {
-	// Trello cards in Doing column
-	// getTrelloCards(function (data) {
-	// 	boardData.trelloCards = trelloCardObj
-	// })
-
 	// INTERCOM.IO
 	// Subscribed Companies
 	client.counts.companySegmentCounts(function (res) {
@@ -104,6 +59,7 @@ let refreshData = function (callback) {
 		if (countJson['Subscribed Companies'] < subscriberCount && subscriberCount !== 0) {
 			subscriberCountTrend = 'down'
 		}
+		boardData.subCountTrend = subscriberCountTrend
 		subscriberCount = countJson['Subscribed Companies']
 		boardData.subCount = subscriberCount
 		// console.log(subscriberCount)
@@ -141,8 +97,6 @@ router.get('/', function(req, res) {
 		refreshed: refreshDate,
 		subCount: subscriberCount,
 		subCountTrend: subscriberCountTrend
-		// trialCount: trialingCount,
-		// trelloCards: trelloCardObj
 	})
 })
 
@@ -162,7 +116,6 @@ io.on('connection', function(client) {
 	client.emit('map', mapCoords)
 	
 	client.on('join', function(data) {
-		//console.log(boardData.trelloCards)
 		let testFunc = function () {
 			refreshBoard()
 			client.emit('message', boardData)

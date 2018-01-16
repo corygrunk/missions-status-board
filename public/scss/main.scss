@@ -1,0 +1,227 @@
+/* VARIABLES */
+$white: #ffffff;
+$white-trans: rgba(255, 255, 255, .5);
+$black: #000000;
+$black-trans: rgba(0, 0, 0, .5);
+$gray-lighter: #f3f3f3;
+$gray-lighter-trans: rgba(243, 243, 243, .5);
+$gray-light: #d6d6d6;
+$gray-light-trans: rgba(214, 214, 214, .5);
+$gray: #969696;
+$gray-trans: rgba(150, 150, 150, .5);
+$gray-dark: #4a4a4a;
+$gray-dark-trans: rgba(74, 74, 74, .5);
+$gray-darker: #2e2e2e;
+$gray-darker-trans: rgba(46, 46, 46, .5);
+$gray-darkest: #181818;
+$blue-lighter: #eff9fc;
+$blue-light: #91c3d6;
+$blue: #0299cf;
+$blue-trans: rgba(0, 142, 200, .5);
+$blue-dark: #186b8c;
+$blue-dark-trans: rgba(24, 107, 140, .5);
+$blue-darker: #264653;
+$blue-darker-trans: rgba(38, 70, 83, .5);
+$blue-darkest: #0D2A35;
+$green: #2a9d8f;
+$green-trans: rgba(42, 157, 143, .5);
+$green-light: #e1f2f0;
+$green-light-trans: rgba(225, 242, 240, .5);
+$green-bright: #09B22A;
+$yellow: #e9c46a;
+$yellow-light: #fbeac0;
+$yellow-light-trans: rgba(251, 234, 192, .75);
+$yellow-trans: rgba(233, 196, 106, .5);
+$orange: #f4a261;
+$orange-trans: rgba(244, 162, 97, .5);
+$red: #e76f51;
+$red-dark: #75232a;
+$red-light: #ffe6e1;
+$red-trans: rgba(231, 111, 81, .5);
+
+$dot-color: rgba(42, 157, 143, .4);
+
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: $gray-light;
+  background-color: $gray-darkest;
+  box-sizing: border-box;
+
+  #colorbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 8px;
+    z-index: 10;
+    .green, .red, .orange, .yellow {
+      width: 25%;
+      float: left;
+      height: 8px;
+    }
+    .green { background: $green; }
+    .red { background: $red; }
+    .orange { background: $orange; }
+    .yellow { background: $yellow; }
+  }
+
+  .stats {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    bottom: 20px;
+    width: 400px;
+    z-index: 5;
+    background: $black-trans;
+    img {
+      margin-top: 60px;
+      width: 60px;
+      height: auto;
+    }
+    .card {
+      margin-right: 0;
+      padding: 60px 30px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:last-child {
+        padding: 60px 30px 60px 30px;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 300px;
+        line-height: 1;
+      }
+      .big-number {
+        font-family: 'Abril Fatface', Georgia, serif;
+        font-size: 140px;
+        font-weight: 100;
+        line-height: 1;
+      }
+      #sub-trend {
+        &.up .trend-arrow {
+          display: inline-block; 
+          width: 0; 
+          height: 0; 
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid $green;
+        }
+        &.down .trend-arrow {
+          display: inline-block; 
+          width: 0; 
+          height: 0; 
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid $red;
+        }
+        .trend-label {
+          display: inline-block;
+          text-transform: uppercase;
+          padding-left: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .map {
+    width: 75%;
+    float: right;
+    position: relative;
+    padding-bottom: 50%;
+    box-sizing: border-box;
+    #mapdiv {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      svg g circle { // Dots
+        fill: $dot-color;
+      }
+      .amcharts-chart-div a {
+        color: $gray-darkest !important;
+      }
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 8px;
+    text-align: right;
+    font-size: 14px;
+    color: $gray-dark; 
+  }
+}
+
+// Real wide
+// @media (min-width: 1921px) {
+//   body { background: $red;}
+// }
+
+// // 1080p
+// @media (max-width: 1920px) {
+//   body { background: $blue; }
+// }
+
+// 1024px
+@media screen and (max-width: 1000px) {
+  body { 
+    .stats {
+      .card {
+        padding: 40px;
+        .title {
+          font-size: 20px;
+          line-height: 1;
+        }
+        .big-number {
+          font-size: 100px;
+          line-height: 1;
+        }
+      }
+      img {
+        position: absolute;
+        bottom: 40px;
+        right: 180px;
+        width: 40px;
+      }
+    }
+    .map {
+      margin: 20px 0;
+      width: 80%;
+    }
+  }
+}
+
+// Phones Portrait
+@media screen and (max-width: 414px) {
+  body { 
+    .stats {
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      .card {
+        padding: 40px;
+      }
+      img {
+        display: none;
+      }
+    }
+    .map {
+      margin: 20px 0;
+      width: 100%;
+    }
+    footer {
+      position: relative;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
