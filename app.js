@@ -8,7 +8,6 @@ const http = require('http')
 const express = require('express')
 const dotenv = require('dotenv').config()
 const request = require('request')
-const bodyParser = require('body-parser')
 const moment = require('moment')
 const Intercom = require('intercom-client')
 const client = new Intercom.Client({ token: process.env.INTERCOM_PERSONAL_ACCESS_TOKEN })
@@ -21,7 +20,6 @@ const port = process.env.PORT || 5000
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.use(express.static(__dirname + '/public'))
-app.use(bodyParser())
 
 const router = express.Router()
 
@@ -37,16 +35,6 @@ let boardData = {
 	'subCountTrend' : subscriberCountTrend,
 	'trialCount' : trialingCount
 }
-
-// MIDDLEWARE
-// ==============================================
-
-// Route middleware that will happen on every request
-router.use(function(req, res, next) {
-	// Log each request to the console
-	console.log(req.method, req.url)
-	next()
-})
 
 let refreshData = function (callback) {
 	// INTERCOM.IO
