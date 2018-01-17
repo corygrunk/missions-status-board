@@ -64,9 +64,8 @@ let getColor = function (status) {
     }
 }
 
+fs.truncate('cities.json', 0, function(){ console.log('Cleared file contents.') })
 let stream = fs.createWriteStream('cities.json', {flags:'a'})
-
-//{ "city" : "Austin", "lat" : "30.267153", "lng" : "-97.7430608", "type" : "bubble", "color" : "#F4A261" }
 
 cityCountryObj.forEach(cities => {
   getLatLong(cities.city, cities.region, cities.country, function(data) {
