@@ -84,6 +84,8 @@ body {
       position: absolute;
       width: 100%;
       height: 100%; }
+      body .map #mapdiv svg g circle {
+        opacity: .5; }
       body .map #mapdiv .amcharts-chart-div a {
         color: #181818 !important; }
   body footer {

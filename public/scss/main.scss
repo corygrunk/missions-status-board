@@ -138,9 +138,9 @@ body {
       position: absolute;
       width: 100%;
       height: 100%;
-      // svg g circle { // Dots
-      //   fill: $dot-color;
-      // }
+      svg g circle { // Dots
+        opacity: .5;
+      }
       .amcharts-chart-div a {
         color: $gray-darkest !important;
       }
