@@ -56,17 +56,19 @@ block content
 			mapCoords = data.mapCoords;
 
 			for (let i = 0; i < mapCoords.length; i++) {
-				let e = '{"latitude":' + mapCoords[i].lat + ', "longitude":' + mapCoords[i].lng + ', "type": "circle", "color": "#6c00ff"}';
+				let e = '{"latitude":' + mapCoords[i].lat + ', "longitude":' + mapCoords[i].lng + ', "type":"circle", "color": "' + mapCoords[i].color + '"}';
 				let o = JSON.parse(e);
 				locs.push(o);
 			};
+
+			console.log(locs[0])
 
 			AmCharts.makeChart( "mapdiv", {
 				"type": "map",
 
 				"dataProvider": {
 					"map": "worldLow",
-					"images": locs,
+					"images": locs
 				},
 
 				"areasSettings": {

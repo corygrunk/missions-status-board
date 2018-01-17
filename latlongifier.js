@@ -1717,8 +1717,13 @@ let getLatLong = function (city, region, country, callback) {
 
 let stream = fs.createWriteStream('cities.json', {flags:'a'})
 
+//{ "city" : "Austin", "lat" : "30.267153", "lng" : "-97.7430608", "type" : "bubble", "color" : "#F4A261" }
+let colorSubscription = '#2A9D8F'
+let colotTrial = '#F4A261'
+
+// WORKING: NEED TO ADD COLOR TO THIS OBJECT. IT SHOULD BE BASED ON STATUS. NEED TO ADD STATUS IN
 cityCountryObj.forEach(cities => {
   getLatLong(cities.city, cities.region, cities.country, function(data) {
-    stream.write('{ "city" : "' + data.city + '", "lat" : "' + data.lat + '", "lng" : "' + data.lng + '" },' + "\n")
+    stream.write('{ "city" : "' + data.city + '", "lat" : "' + data.lat + '", "lng" : "' + data.lng + '", "color": "' + data.color + ''" },' + "\n")
   })
 })
