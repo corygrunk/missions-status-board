@@ -37,7 +37,8 @@ body {
     body .stats img {
       margin-top: 60px;
       width: 60px;
-      height: auto; }
+      height: auto;
+      opacity: .2; }
     body .stats .card {
       margin-right: 0;
       padding: 60px 30px 30px 30px;
