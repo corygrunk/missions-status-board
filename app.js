@@ -40,7 +40,8 @@ let refreshData = function (callback) {
 	// INTERCOM.IO
 	// Subscribed Companies
 	client.counts.companySegmentCounts(function (res) {
-		let countJson = res.body.company.segment[3]
+		// TODO: Need to remove hardcoded segment array number
+		let countJson = res.body.company.segment[4]
 		if (countJson['Subscribed Companies'] > subscriberCount && subscriberCount !== 0) {
 			subscriberCountTrend = 'up'
 		}
@@ -55,7 +56,7 @@ let refreshData = function (callback) {
 
 	// Trialing Conpanies
 	client.counts.companySegmentCounts(function (res) {
-		let countJson = res.body.company.segment[4]
+		let countJson = res.body.company.segment[5]
 		trialingCount = countJson['Trialing Company']
 		boardData.trialCount = trialingCount
 		// console.log(trialingCount)
