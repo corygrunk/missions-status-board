@@ -1,3 +1,3 @@
 Missions Status Board
 =====================
-Passive status board for office displays.
+Passive status board for office displays
