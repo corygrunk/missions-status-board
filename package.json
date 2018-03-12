@@ -5,13 +5,14 @@
   "description": "Passive status board for office displays.",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "csvtojson": "^1.1.9",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "install": "^0.10.2",
     "intercom-client": "^2.9.1",
     "jade": "1.11.x",
     "moment": "^2.20.1",
-    "npm": "^5.6.0",
+    "npm": "^5.7.1",
     "request": "^2.83.0",
     "simple-rate-limiter": "^0.2.3",
     "socket.io": "^2.0.4"

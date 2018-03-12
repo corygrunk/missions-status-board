@@ -2,9 +2,11 @@ const fs = require('fs')
 const dotenv = require('dotenv').config()
 const limit = require("simple-rate-limiter")
 const request = limit(require('request')).to(1).per(100)
+const csvFilePath = process.env.PATH_TO_CSV
+const csv = require('csvtojson')
 let googleApiKey = process.env.GOOGLE_API_KEY
 
-let cityCountryObj = [] // Array of locations goes here
+let cityCountryObj = [] // Array of locationss
 
 let latLongObj = []
 
@@ -48,20 +50,34 @@ let getColor = function (status) {
   }
 }
 
-fs.truncate('map.js', 0, function(){ console.log('Cleared file contents.') })
+// Read CSV and convert it to JSON
+csv().fromFile(csvFilePath).on('json',(jsonObj)=>{
+  let simplifiedObj = {}
+  simplifiedObj.country = jsonObj.Country
+  simplifiedObj.region = jsonObj.Region
+  simplifiedObj.city = jsonObj.City
+  simplifiedObj.status = jsonObj.subscription_status
+  cityCountryObj.push(simplifiedObj)
+})
+.on('done',(error)=>{
+  //Get Lat/Longs and write to map.js file
 
-let stream = fs.createWriteStream('map.js', {flags:'a'})
+  fs.truncate('map.js', 0, function(){ console.log('Cleared file contents.') })
 
-stream.write('module.exports = {' + '\n')
-stream.write('\tmapCoords: [' + '\n')
+  let stream = fs.createWriteStream('map.js', {flags:'a'})
 
-cityCountryObj.forEach(cities => {
-  let comma = function () { if (cityCount !== cityCountryObj.length) { return ',' } else {return ''} }
-  getLatLong(cities.city, cities.region, cities.country, function(data) {
-    stream.write('\t\t{ "city" : "' + data.city + '", "lat" : "' + data.lat + '", "lng" : "' + data.lng + '", "color": "' + getColor(cities.status) + '" }' + comma() + "\n")
-    if (cityCount === cityCountryObj.length) {
-      stream.write('\t]' + '\n')
-      stream.write('}' + '\n')
-    }
+  stream.write('module.exports = {' + '\n')
+  stream.write('\tmapCoords: [' + '\n')
+  stream.write('\t// SAMPLE DATA' + '\n')
+  
+  cityCountryObj.forEach(cities => {
+    let comma = function () { if (cityCount !== cityCountryObj.length) { return ',' } else {return ''} }
+    getLatLong(cities.city, cities.region, cities.country, function(data) {
+      stream.write('\t\t{ "city" : "' + data.city + '", "lat" : "' + data.lat + '", "lng" : "' + data.lng + '", "color": "' + getColor(cities.status) + '" }' + comma() + "\n")
+      if (cityCount === cityCountryObj.length) {
+        stream.write('\t]' + '\n')
+        stream.write('}' + '\n')
+      }
+    })
   })
 })
